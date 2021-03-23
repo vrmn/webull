@@ -15,7 +15,7 @@ from email_validator import validate_email, EmailNotValidError
 from pandas import DataFrame, to_datetime
 from pytz import timezone
 
-from . import endpoints
+import endpoints
 
 
 class webull:
@@ -299,6 +299,7 @@ class webull:
         output numbers of portfolio
         '''
         data = self.get_account()
+        print(data)
         output = {}
         for item in data['accountMembers']:
             output[item['key']] = item['value']
